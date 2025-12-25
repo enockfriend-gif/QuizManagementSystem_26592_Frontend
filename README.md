@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # QuizManagementSystem_26592
 The system allows teachers to create and manage quizzes or exams, while providing students with an intuitive and user-friendly interface to take them.
 
@@ -30,3 +31,6 @@ The system allows teachers to create and manage quizzes or exams, while providin
 
 
 
+=======
+# QuizManagementSystem_26592_Frontend
+>>>>>>> 450e3ca856fc01f45e4b920b5379188678ead670
