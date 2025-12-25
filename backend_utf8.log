@@ -1,0 +1,113 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< auca.ac.rw:Online-quiz-management-system >--------------
+[INFO] Building Online-quiz-management-system 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.6:run (default-cli) > test-compile @ Online-quiz-management-system >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ Online-quiz-management-system ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ Online-quiz-management-system ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ Online-quiz-management-system ---
+[INFO] skip non existing resourceDirectory E:\Web Tech\Online-quiz-management-system\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ Online-quiz-management-system ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.5.6:run (default-cli) < test-compile @ Online-quiz-management-system <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.6:run (default-cli) @ Online-quiz-management-system ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2025-12-21T00:14:11.545+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] .s.OnlineQuizManagementSystemApplication : Starting OnlineQuizManagementSystemApplication using Java 21.0.8 with PID 14940 (E:\Web Tech\Online-quiz-management-system\target\classes started by GOD in E:\Web Tech\Online-quiz-management-system)
+2025-12-21T00:14:11.553+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] .s.OnlineQuizManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-12-21T00:14:12.959+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-21T00:14:13.133+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 11 JPA repository interfaces.
+2025-12-21T00:14:15.601+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9000 (http)
+2025-12-21T00:14:15.629+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-21T00:14:15.637+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-12-21T00:14:15.750+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-21T00:14:15.750+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4080 ms
+2025-12-21T00:14:16.225+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-21T00:14:16.368+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-12-21T00:14:16.455+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-21T00:14:17.033+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-21T00:14:17.068+02:00  WARN 14940 --- [Online-quiz-management-system] [           main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-12-21T00:14:17.109+02:00  WARN 14940 --- [Online-quiz-management-system] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21T00:14:17.133+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [undefined/unknown]
+	Database driver: undefined/unknown
+	Database version: 12.0
+	Autocommit mode: undefined/unknown
+	Isolation level: <unknown>
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-21T00:14:19.470+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21T00:14:19.556+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-21T00:14:20.242+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c96bf1e
+2025-12-21T00:14:20.242+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-21T00:14:20.250+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a3272e0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-12-21T00:14:22.375+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21T00:14:23.217+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-21T00:14:25.084+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2025-12-21T00:14:25.084+02:00  WARN 14940 --- [Online-quiz-management-system] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : === Email Configuration Check ===
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : Checking EMAIL_USERNAME (or MAIL_USERNAME)...
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : EMAIL_USERNAME/MAIL_USERNAME configured: YES
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : Checking EMAIL_PASSWORD (or MAIL_PASSWORD)...
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : EMAIL_PASSWORD/MAIL_PASSWORD configured: YES
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : Email username: fr***@gmail.com (masked)
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : Email password: *** (configured, 16 chars)
+2025-12-21T00:14:25.332+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.service.EmailService         : =================================
+2025-12-21T00:14:25.988+02:00  WARN 14940 --- [Online-quiz-management-system] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-21T00:14:27.202+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-21T00:14:28.368+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9000 (http) with context path '/'
+2025-12-21T00:14:28.398+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] .s.OnlineQuizManagementSystemApplication : Started OnlineQuizManagementSystemApplication in 17.715 seconds (process running for 18.823)
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.start_time<?
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.end_time<?
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: update users set email=?,location_id=?,password=?,role=?,settings=?,username=? where id=?
+2025-12-21T00:14:28.946+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.s.DefaultAdminInitializer    : Default admin ensured with email friendeno123@gmail.com
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: update users set email=?,location_id=?,password=?,role=?,settings=?,username=? where id=?
+2025-12-21T00:14:29.106+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.s.DefaultAdminInitializer    : Default instructor ensured with email instructor@example.com
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: update users set email=?,location_id=?,password=?,role=?,settings=?,username=? where id=?
+2025-12-21T00:14:29.249+02:00  INFO 14940 --- [Online-quiz-management-system] [           main] a.a.r.O.q.m.s.DefaultAdminInitializer    : Default student ensured with email student@example.com
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.start_time<?
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.end_time<?
+2025-12-21T00:16:26.581+02:00  INFO 14940 --- [Online-quiz-management-system] [nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-21T00:16:26.581+02:00  INFO 14940 --- [Online-quiz-management-system] [nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-21T00:16:26.583+02:00  INFO 14940 --- [Online-quiz-management-system] [nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[JWT Filter] Filtering request: /api/users
+[JWT Filter] No Bearer token found for: /api/users
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.start_time<?
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.end_time<?
+[JWT Filter] Filtering request: /api/auth/login
+[JWT Filter] No Bearer token found for: /api/auth/login
+2025-12-21T00:17:02.845+02:00  INFO 14940 --- [Online-quiz-management-system] [nio-9000-exec-2] a.a.r.O.q.m.controller.AuthController    : Login attempt for: null - BYPASSING OTP
+2025-12-21T00:17:02.845+02:00  INFO 14940 --- [Online-quiz-management-system] [nio-9000-exec-2] a.a.r.O.q.m.service.AuthService          : Authenticating user: null (Bypassing OTP)
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where upper(u1_0.username)=upper(?)
+Hibernate: select u1_0.id,u1_0.email,u1_0.location_id,u1_0.password,u1_0.role,u1_0.settings,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2025-12-21T00:17:03.209+02:00  WARN 14940 --- [Online-quiz-management-system] [nio-9000-exec-2] a.a.r.O.q.m.controller.AuthController    : Login failed for null: Bad credentials
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.start_time<?
+Hibernate: select q1_0.id,q1_0.created_by,q1_0.duration_minutes,q1_0.end_time,q1_0.start_time,q1_0.status,q1_0.title from quizzes q1_0 where q1_0.status=? and q1_0.end_time<?

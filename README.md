@@ -1,5 +1,16 @@
 # QuizManagementSystem_26592
-The system allows teachers to create and manage quizzes or exams, while providing students with an intuitive and user-friendly interface to take them. The next will be the screenshoot of the projrct 
+The system allows teachers to create and manage quizzes or exams, while providing students with an intuitive and user-friendly interface to take them.
+
+## 🔑 Default Admin Credentials
+
+| Field | Value |
+|-------|-------|
+| **Username** | Friend Enock |
+| **Email** | friendeno123@gmail.com |
+| **Password** | Admin123@ |
+| **Role** | ADMIN |
+
+⚠️ **Important:** Change this password immediately after first login in production! The next will be the screenshoot of the projrct 
 
 
 <img width="2303" height="1451" alt="ERD Diagram" src="https://github.com/user-attachments/assets/80ab2068-b7f5-41a9-ac4e-5d0eedfbbfcf" />

@@ -1,7 +1,7 @@
 package auca.ac.rw.Online.quiz.management.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -32,7 +32,8 @@ public class QuizAttempt {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "quiz_id")
-    @JsonBackReference(value = "quiz-attempts")
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties({"quizAttempts", "questions", "createdBy", "students"})
+    @com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL)
     private Quiz quiz;
 
     @Enumerated(EnumType.STRING)
@@ -45,34 +46,78 @@ public class QuizAttempt {
     private OffsetDateTime submittedAt;
 
     @OneToMany(mappedBy = "attempt")
-    @JsonManagedReference(value = "attempt-answers")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<Answer> answers = new ArrayList<>();
 
-    public QuizAttempt() {}
+    public QuizAttempt() {
+    }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public User getUser() { return user; }
-    public void setUser(User user) { this.user = user; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public Quiz getQuiz() { return quiz; }
-    public void setQuiz(Quiz quiz) { this.quiz = quiz; }
+    public User getUser() {
+        return user;
+    }
 
-    public EAttemptStatus getStatus() { return status; }
-    public void setStatus(EAttemptStatus status) { this.status = status; }
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-    public Double getScore() { return score; }
-    public void setScore(Double score) { this.score = score; }
+    public Quiz getQuiz() {
+        return quiz;
+    }
 
-    public OffsetDateTime getStartedAt() { return startedAt; }
-    public void setStartedAt(OffsetDateTime startedAt) { this.startedAt = startedAt; }
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
 
-    public OffsetDateTime getSubmittedAt() { return submittedAt; }
-    public void setSubmittedAt(OffsetDateTime submittedAt) { this.submittedAt = submittedAt; }
+    public EAttemptStatus getStatus() {
+        return status;
+    }
 
-    public List<Answer> getAnswers() { return answers; }
-    public void setAnswers(List<Answer> answers) { this.answers = answers; }
+    public void setStatus(EAttemptStatus status) {
+        this.status = status;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public OffsetDateTime getStartedAt() {
+        return startedAt;
+    }
+
+    public void setStartedAt(OffsetDateTime startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    public OffsetDateTime getSubmittedAt() {
+        return submittedAt;
+    }
+
+    public void setSubmittedAt(OffsetDateTime submittedAt) {
+        this.submittedAt = submittedAt;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
+
+    @JsonProperty("quizId")
+    public Long getQuizId() {
+        return quiz != null ? quiz.getId() : null;
+    }
 }
-
-

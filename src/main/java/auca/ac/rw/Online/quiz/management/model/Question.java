@@ -43,6 +43,9 @@ public class Question {
     @JsonManagedReference(value = "question-options")
     private List<Option> options = new ArrayList<>();
 
+    @Column(name = "points")
+    private Integer points = 1;
+
     public Question() {}
 
     public Long getId() { return id; }
@@ -62,6 +65,9 @@ public class Question {
 
     public List<Option> getOptions() { return options; }
     public void setOptions(List<Option> options) { this.options = options; }
+
+    public Integer getPoints() { return points; }
+    public void setPoints(Integer points) { this.points = points; }
 }
 
 

@@ -19,10 +19,36 @@ public class LocationService {
     public Location saveLocation(Location location) { return locationRepository.save(location); }
 
     public void deleteLocation(Long id) { locationRepository.deleteById(id); }
-
-    // Custom queries (to be implemented in LocationRepository)
-    // Examples:
-    // public List<Location> findByProvinceId(Long provinceId) { ... }
-    // public List<Location> findByProvinceName(String provinceName) { ... }
-    // public List<User> findUsersByProvinceName(String provinceName) { ... }
+    
+    public org.springframework.data.domain.Page<Location> search(String q, org.springframework.data.domain.Pageable pageable) {
+        if (q == null || q.isBlank()) {
+            return locationRepository.findAll(pageable);
+        }
+        return locationRepository.findByProvinceNameContainingIgnoreCaseOrDistrictNameContainingIgnoreCaseOrSectorNameContainingIgnoreCase(
+            q, q, q, pageable);
+    }
+    
+    public List<Location> getUserLocations() {
+        return locationRepository.findAllWithUsers();
+    }
+    
+    public org.springframework.data.domain.Page<Location> getUserLocationsPage(String q, org.springframework.data.domain.Pageable pageable) {
+        if (q == null || q.isBlank()) {
+            return locationRepository.findAllWithUsers(pageable);
+        }
+        return locationRepository.findUserLocationsWithSearch(q, pageable);
+    }
+    
+    public void clearAllLocations() {
+        locationRepository.deleteAll();
+    }
+    
+    public long getLocationCount() {
+        return locationRepository.count();
+    }
+    
+    public int getProvinceCount() {
+        List<Object[]> provinces = locationRepository.findDistinctProvinces();
+        return provinces != null ? provinces.size() : 0;
+    }
 }

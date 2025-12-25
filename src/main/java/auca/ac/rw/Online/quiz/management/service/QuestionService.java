@@ -19,6 +19,17 @@ public class QuestionService {
     public Optional<Question> findById(Long id) { return questionRepository.findById(id); }
     public Question save(Question question) { return questionRepository.save(question); }
     public void deleteById(Long id) { questionRepository.deleteById(id); }
+    
+    public org.springframework.data.domain.Page<Question> search(String q, org.springframework.data.domain.Pageable pageable) {
+        if (q == null || q.isBlank()) {
+            return questionRepository.findAll(pageable);
+        }
+        return questionRepository.findByTextContainingIgnoreCase(q, pageable);
+    }
+    
+    public List<Question> findByQuizId(Long quizId) {
+        return questionRepository.findByQuizId(quizId);
+    }
 }
 
 

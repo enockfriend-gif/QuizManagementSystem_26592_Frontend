@@ -25,6 +25,9 @@ public class ReportController {
                 .contentType(MediaType.parseMediaType("text/csv"))
                 .body(data);
     }
+
+    @GetMapping("/stats")
+    public ResponseEntity<java.util.Map<String, Object>> getStats() {
+        return ResponseEntity.ok(reportService.getGeneralStats());
+    }
 }
-
-

@@ -14,9 +14,51 @@ import java.util.stream.Collectors;
 @Service
 public class ReportService {
     private final QuizAttemptRepository quizAttemptRepository;
+    private final auca.ac.rw.Online.quiz.management.repository.QuizRepository quizRepository;
+    private final auca.ac.rw.Online.quiz.management.repository.UserRepository userRepository;
 
-    public ReportService(QuizAttemptRepository quizAttemptRepository) {
+    public ReportService(QuizAttemptRepository quizAttemptRepository,
+            auca.ac.rw.Online.quiz.management.repository.QuizRepository quizRepository,
+            auca.ac.rw.Online.quiz.management.repository.UserRepository userRepository) {
         this.quizAttemptRepository = quizAttemptRepository;
+        this.quizRepository = quizRepository;
+        this.userRepository = userRepository;
+    }
+
+    public Map<String, Object> getGeneralStats() {
+        long totalQuizzes = quizRepository.count();
+        long totalUsers = userRepository.count();
+        long totalAttempts = quizAttemptRepository.count();
+
+        List<QuizAttempt> attempts = quizAttemptRepository.findAll();
+        double avgScore = attempts.stream()
+                .filter(a -> a.getScore() != null)
+                .mapToDouble(QuizAttempt::getScore)
+                .average()
+                .orElse(0.0);
+
+        Map<String, Object> stats = new java.util.HashMap<>();
+        stats.put("totalQuizzes", totalQuizzes);
+        stats.put("totalUsers", totalUsers);
+        stats.put("totalAttempts", totalAttempts);
+        stats.put("averageScore", avgScore);
+
+        // Performance by Quiz
+        List<Map<String, Object>> quizPerformance = quizRepository.findAll().stream().map(quiz -> {
+            Map<String, Object> p = new java.util.HashMap<>();
+            p.put("title", quiz.getTitle());
+            double score = attempts.stream()
+                    .filter(a -> a.getQuiz() != null && a.getQuiz().getId().equals(quiz.getId())
+                            && a.getScore() != null)
+                    .mapToDouble(QuizAttempt::getScore)
+                    .average()
+                    .orElse(0.0);
+            p.put("avgScore", score);
+            return p;
+        }).collect(Collectors.toList());
+
+        stats.put("quizPerformance", quizPerformance);
+        return stats;
     }
 
     public Map<Long, DoubleSummaryStatistics> scoreStatsByQuiz() {
@@ -43,5 +85,3 @@ public class ReportService {
         return out.toByteArray();
     }
 }
-
-

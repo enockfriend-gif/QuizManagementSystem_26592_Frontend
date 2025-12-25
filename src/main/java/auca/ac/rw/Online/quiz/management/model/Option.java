@@ -40,6 +40,9 @@ public class Option {
     public boolean isCorrect() { return correct; }
     public void setCorrect(boolean correct) { this.correct = correct; }
 
+    public Boolean getIsCorrect() { return correct; }
+    public void setIsCorrect(Boolean isCorrect) { this.correct = isCorrect != null ? isCorrect : false; }
+
     public Question getQuestion() { return question; }
     public void setQuestion(Question question) { this.question = question; }
 }

@@ -18,7 +18,9 @@ public class AdminController {
     }
 
     @GetMapping("/users")
-    public List<User> listUsers() { return userRepository.findAll(); }
+    public List<User> listUsers() {
+        return userRepository.findAll();
+    }
 
     @PatchMapping("/users/{id}/role")
     public ResponseEntity<User> updateUserRole(@PathVariable Long id, @RequestParam("role") EUserRole role) {
@@ -39,5 +41,3 @@ public class AdminController {
         return ResponseEntity.noContent().build();
     }
 }
-
-

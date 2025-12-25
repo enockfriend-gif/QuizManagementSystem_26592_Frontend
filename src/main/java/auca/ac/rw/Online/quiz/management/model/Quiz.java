@@ -10,12 +10,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "quizzes")
@@ -32,15 +35,13 @@ public class Quiz {
     @Column(nullable = false)
     private EQuizStatus status = EQuizStatus.DRAFT;
 
-    // Scheduling
     private OffsetDateTime startTime;
     private OffsetDateTime endTime;
     private Integer durationMinutes; // optional explicit duration
 
-    // Links per ERD
     @ManyToOne
     @JoinColumn(name = "created_by")
-    @JsonBackReference(value = "user-quizzes")
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties({"quizzesCreated", "quizAttempts", "quizzes", "password", "location"})
     private User createdBy;
 
     @OneToMany(mappedBy = "quiz")
@@ -48,10 +49,15 @@ public class Quiz {
     private List<Question> questions = new ArrayList<>();
 
     @OneToMany(mappedBy = "quiz")
-    @JsonManagedReference(value = "quiz-attempts")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<QuizAttempt> quizAttempts = new ArrayList<>();
 
-    public Quiz() {}
+    @ManyToMany(mappedBy = "quizzes")
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private Set<User> students = new HashSet<>();
+
+    public Quiz() {
+    }
 
     public Long getId() {
         return id;
@@ -77,23 +83,59 @@ public class Quiz {
         this.status = status;
     }
 
-    public OffsetDateTime getStartTime() { return startTime; }
-    public void setStartTime(OffsetDateTime startTime) { this.startTime = startTime; }
+    public OffsetDateTime getStartTime() {
+        return startTime;
+    }
 
-    public OffsetDateTime getEndTime() { return endTime; }
-    public void setEndTime(OffsetDateTime endTime) { this.endTime = endTime; }
+    public void setStartTime(OffsetDateTime startTime) {
+        this.startTime = startTime;
+    }
 
-    public Integer getDurationMinutes() { return durationMinutes; }
-    public void setDurationMinutes(Integer durationMinutes) { this.durationMinutes = durationMinutes; }
+    public OffsetDateTime getEndTime() {
+        return endTime;
+    }
 
-    public User getCreatedBy() { return createdBy; }
-    public void setCreatedBy(User createdBy) { this.createdBy = createdBy; }
+    public void setEndTime(OffsetDateTime endTime) {
+        this.endTime = endTime;
+    }
 
-    public List<Question> getQuestions() { return questions; }
-    public void setQuestions(List<Question> questions) { this.questions = questions; }
+    public Integer getDurationMinutes() {
+        return durationMinutes;
+    }
 
-    public List<QuizAttempt> getQuizAttempts() { return quizAttempts; }
-    public void setQuizAttempts(List<QuizAttempt> quizAttempts) { this.quizAttempts = quizAttempts; }
+    public void setDurationMinutes(Integer durationMinutes) {
+        this.durationMinutes = durationMinutes;
+    }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(User createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public List<QuizAttempt> getQuizAttempts() {
+        return quizAttempts;
+    }
+
+    public void setQuizAttempts(List<QuizAttempt> quizAttempts) {
+        this.quizAttempts = quizAttempts;
+    }
+
+    public Set<User> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<User> students) {
+        this.students = students;
+    }
 }
-
-

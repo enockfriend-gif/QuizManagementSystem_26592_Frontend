@@ -1,6 +1,5 @@
 package auca.ac.rw.Online.quiz.management.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -13,6 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(
@@ -25,6 +25,7 @@ import java.util.List;
         @Index(name = "idx_location_village", columnList = "village_id, village_name")
     }
 )
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Location {
 
     @Id
@@ -71,7 +72,7 @@ public class Location {
     private LocationType locationType;
 
     @OneToMany(mappedBy = "location")
-    @JsonManagedReference(value = "location-users")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<User> users = new ArrayList<>();
 
     public Location() {}
@@ -126,6 +127,8 @@ public class Location {
 
     public LocationType getLocationType() { return locationType; }
     public void setLocationType(LocationType locationType) { this.locationType = locationType; }
+    public List<User> getUsers() { return users; }
+    public void setUsers(List<User> users) { this.users = users; }
 }
 
 
